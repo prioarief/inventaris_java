@@ -227,6 +227,9 @@ public class Admin_main extends javax.swing.JFrame {
 
     private void jenisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jenisMouseClicked
         // TODO add your handling code here:
+        CrudJenis cj = new CrudJenis();
+        cj.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jenisMouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
@@ -246,10 +249,16 @@ public class Admin_main extends javax.swing.JFrame {
 
     private void levelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_levelMouseClicked
         // TODO add your handling code here:
+        CrudLevel cr = new CrudLevel();
+        cr.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_levelMouseClicked
 
     private void ruangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ruangMouseClicked
         // TODO add your handling code here:
+        CrudRuang cr = new CrudRuang();
+        cr.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_ruangMouseClicked
 
     private void inventarisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inventarisMouseClicked

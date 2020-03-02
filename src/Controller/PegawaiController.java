@@ -90,28 +90,28 @@ public class PegawaiController {
 
     //berfungsi menghapus data yang dipilih
     public void delete() {
-//        if (!frame.getHB().getText().trim().isEmpty()) {
-//            int id = Integer.parseInt(frame.getTxtID().getText());
-//            implMahasiswa.delete(id);
-//            
-//            JOptionPane.showMessageDialog(null, "Hapus Data  sukses");
-//        } else {
-//            JOptionPane.showMessageDialog(frame, "Pilih data yang akan di hapus");
-//        }
+        if (!frame.getTxtID().getText().trim().isEmpty()) {
+            int id = Integer.parseInt(frame.getTxtID().getText());
+            implPegawai.delete(id);
+            
+            JOptionPane.showMessageDialog(null, "Hapus Data  sukses");
+        } else {
+            JOptionPane.showMessageDialog(frame, "Pilih data yang akan di hapus");
+        }
     }
 
     public void isiTableCariNama() {
-//        lb = implMahasiswa.getCariNama(frame.getTxtCariBarang().getText());
-//        TableModelBarang tmb = new TableModelBarang(lb);
-//        frame.getTabelData().setModel(tmb);
+        lb = implPegawai.getCariNama(frame.SearchPegawai().getText());
+        tb_pegawai tmb = new tb_pegawai(lb);
+        frame.getTabelData().setModel(tmb);
     }
 
     public void carinama() {
-//        if (!frame.getTxtCariBarang().getText().trim().isEmpty()) {
-//            implMahasiswa.getCariNama(frame.getTxtCariBarang().getText());
-//            isiTableCariNama();
-//        } else {
-//            JOptionPane.showMessageDialog(frame, "SILAHKAN PILIH DATA");
-//        }
+        if (!frame.SearchPegawai().getText().trim().isEmpty()) {
+            implPegawai.getCariNama(frame.SearchPegawai().getText());
+            isiTableCariNama();
+        } else {
+            JOptionPane.showMessageDialog(frame, "SILAHKAN PILIH DATA");
+        }
     }
 }

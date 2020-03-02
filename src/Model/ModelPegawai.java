@@ -5,9 +5,6 @@
  */
 package Model;
 
-import java.util.List;
-import javax.swing.table.AbstractTableModel;
-
 /**
  *
  * @author ASUS

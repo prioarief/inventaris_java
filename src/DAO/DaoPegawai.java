@@ -26,10 +26,10 @@ import DAOImplements.ImplementsPegawai;
 public class DaoPegawai implements ImplementsPegawai {
     Connection connection;
     final String insert = "INSERT INTO pegawai (nama_pegawai, nip, alamat) VALUES (?, ?, ?);";
-    final String update = "UPDATE pegawai set nama_pegawai=?, nip=?, alamat=?, where id_pegawai=? ;";
+    final String update = "UPDATE pegawai set nama_pegawai=?, nip=?, alamat=? where id_pegawai=? ;";
     final String delete = "DELETE FROM pegawai where id_pegawai=? ;";
     final String select = "SELECT * FROM pegawai;";
-    final String caribarang = "SELECT * FROM pegawai where nama_pegawai like ?";
+    final String search = "SELECT * FROM pegawai where nama_pegawai like ?";
     
     public DaoPegawai() {
         connection = koneksi.connection();
@@ -69,7 +69,7 @@ public class DaoPegawai implements ImplementsPegawai {
             statement.executeUpdate();
 
         } catch (SQLException ex) {
-            ex.getErrorCode();
+            ex.printStackTrace();
         } finally {
             try {
                 statement.close();
@@ -123,12 +123,12 @@ public class DaoPegawai implements ImplementsPegawai {
         List<ModelPegawai> lb = null;
         try {
             lb = new ArrayList<ModelPegawai>();
-            PreparedStatement st = connection.prepareStatement(caribarang);
+            PreparedStatement st = connection.prepareStatement(search);
             st.setString(1, "%" + nama_pegawai + "%");
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
                 ModelPegawai b = new ModelPegawai();
-                b.setId(rs.getInt("id"));
+                b.setId(rs.getInt("id_pegawai"));
                 b.setNamaPegawai(rs.getString("nama_pegawai"));
                 b.setNipPegawai(rs.getString("nip"));
                 b.setAlamatPegawai(rs.getString("alamat"));

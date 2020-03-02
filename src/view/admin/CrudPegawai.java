@@ -60,6 +60,10 @@ public class CrudPegawai extends javax.swing.JFrame {
         add = new javax.swing.JButton();
         edit = new javax.swing.JButton();
         delete = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        cari = new javax.swing.JTextField();
+        btnCari = new javax.swing.JButton();
+        refresh = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -251,6 +255,25 @@ public class CrudPegawai extends javax.swing.JFrame {
             }
         });
 
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel6.setText("Cari Pegawai");
+
+        btnCari.setBackground(new java.awt.Color(0, 0, 0));
+        btnCari.setForeground(new java.awt.Color(255, 255, 255));
+        btnCari.setText("Cari");
+        btnCari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCariActionPerformed(evt);
+            }
+        });
+
+        refresh.setText("refresh");
+        refresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                refreshActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -258,10 +281,6 @@ public class CrudPegawai extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(428, 428, 428))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(65, 65, 65)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -270,38 +289,49 @@ public class CrudPegawai extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(jLabel5))
                 .addGap(53, 53, 53)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(nampeg)
+                    .addComponent(nip)
+                    .addComponent(jScrollPane2)
+                    .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(nampeg)
-                                .addComponent(nip)
-                                .addComponent(jScrollPane2)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                    .addComponent(add, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(edit, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(add, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 759, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(54, 54, 54))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(refresh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(edit, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 759, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(jLabel6)
+                        .addGap(52, 52, 52)
+                        .addComponent(cari, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnCari, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(54, 54, 54))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(433, 433, 433))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1)
-                .addGap(8, 8, 8)
+                .addGap(31, 31, 31)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6)
+                    .addComponent(cari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCari))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
@@ -315,12 +345,15 @@ public class CrudPegawai extends javax.swing.JFrame {
                             .addComponent(jLabel4)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(add)
-                            .addComponent(edit))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(edit)
+                            .addComponent(add))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(delete)))
-                .addGap(0, 182, Short.MAX_VALUE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(delete)
+                            .addComponent(refresh)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 76, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -352,6 +385,9 @@ public class CrudPegawai extends javax.swing.JFrame {
 
     private void jenisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jenisMouseClicked
         // TODO add your handling code here:
+        CrudJenis cj = new CrudJenis();
+        cj.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jenisMouseClicked
 
     private void peminjamanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_peminjamanMouseClicked
@@ -364,10 +400,16 @@ public class CrudPegawai extends javax.swing.JFrame {
 
     private void levelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_levelMouseClicked
         // TODO add your handling code here:
+        CrudLevel cr = new CrudLevel();
+        cr.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_levelMouseClicked
 
     private void ruangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ruangMouseClicked
         // TODO add your handling code here:
+        CrudRuang cr = new CrudRuang();
+        cr.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_ruangMouseClicked
 
     private void inventarisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inventarisMouseClicked
@@ -382,6 +424,7 @@ public class CrudPegawai extends javax.swing.JFrame {
         // TODO add your handling code here:
         pg.insert();
         pg.reset();
+        pg.isiTable();
     }//GEN-LAST:event_addActionPerformed
 
     private void editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editActionPerformed
@@ -394,12 +437,24 @@ public class CrudPegawai extends javax.swing.JFrame {
     private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
         // TODO add your handling code here:
         pg.delete();
+        pg.reset();
+        pg.isiTable();
     }//GEN-LAST:event_deleteActionPerformed
 
     private void tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableMouseClicked
         // TODO add your handling code here:
         pg.isiField(table.getSelectedRow());
     }//GEN-LAST:event_tableMouseClicked
+
+    private void btnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCariActionPerformed
+        // TODO add your handling code here:
+        pg.carinama();
+    }//GEN-LAST:event_btnCariActionPerformed
+
+    private void refreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshActionPerformed
+        // TODO add your handling code here:
+        pg.isiTable();
+    }//GEN-LAST:event_refreshActionPerformed
 
     /**
      * @param args the command line arguments
@@ -464,6 +519,9 @@ public class CrudPegawai extends javax.swing.JFrame {
     public JButton getButtonDetele(){
         return delete;
     }
+    public JTextField SearchPegawai(){
+        return cari;
+    }
 //    public JButton getButtonReset(){
 //        return buttonReset;
 //    }
@@ -478,6 +536,8 @@ public class CrudPegawai extends javax.swing.JFrame {
     private javax.swing.JLabel Logout;
     private javax.swing.JButton add;
     private javax.swing.JTextArea alamat;
+    private javax.swing.JButton btnCari;
+    private javax.swing.JTextField cari;
     private javax.swing.JButton delete;
     private javax.swing.JButton edit;
     private javax.swing.JTextField id;
@@ -487,6 +547,7 @@ public class CrudPegawai extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -498,6 +559,7 @@ public class CrudPegawai extends javax.swing.JFrame {
     private javax.swing.JLabel pegawai;
     private javax.swing.JLabel peminjaman;
     private javax.swing.JLabel petugas;
+    private javax.swing.JButton refresh;
     private javax.swing.JLabel ruang;
     private javax.swing.JTable table;
     // End of variables declaration//GEN-END:variables
