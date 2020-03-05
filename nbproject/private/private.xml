@@ -3,18 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Arief/project/netbeans/Inventaris/src/Controller/JenisController.java</file>
+            <file>file:/D:/Arief/project/netbeans/Inventaris/src/Controller/RuangController.java</file>
+            <file>file:/D:/Arief/project/netbeans/Inventaris/src/DAOImplements/ImplementsPetugas.java</file>
             <file>file:/D:/Arief/project/netbeans/Inventaris/src/DAO/DaoLevel.java</file>
-            <file>file:/D:/Arief/project/netbeans/Inventaris/src/DAOImplements/ImplementsJenis.java</file>
-            <file>file:/D:/Arief/project/netbeans/Inventaris/src/Controller/LevelController.java</file>
-            <file>file:/D:/Arief/project/netbeans/Inventaris/src/view/admin/CrudLevel.java</file>
+            <file>file:/D:/Arief/project/netbeans/Inventaris/src/DAO/DaoPetugas.java</file>
+            <file>file:/D:/Arief/project/netbeans/Inventaris/src/view/admin/CrudPetugas.java</file>
             <file>file:/D:/Arief/project/netbeans/Inventaris/src/view/admin/CrudPegawai.java</file>
-            <file>file:/D:/Arief/project/netbeans/Inventaris/src/view/admin/CrudJenis.java</file>
-            <file>file:/D:/Arief/project/netbeans/Inventaris/src/DAO/DaoJenis.java</file>
-            <file>file:/D:/Arief/project/netbeans/Inventaris/src/view/admin/Admin_main.java</file>
             <file>file:/D:/Arief/project/netbeans/Inventaris/src/view/admin/CrudRuang.java</file>
             <file>file:/D:/Arief/project/netbeans/Inventaris/src/DAOImplements/ImplementsLevel.java</file>
-            <file>file:/D:/Arief/project/netbeans/Inventaris/src/tableModel/tb_level.java</file>
         </group>
     </open-files>
 </project-private>
